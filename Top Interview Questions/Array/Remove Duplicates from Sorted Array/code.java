@@ -1,12 +1,12 @@
-/** 
-    Status: Accepted
-    362 / 362 test cases passed
-    Runtime: 10 ms
-    Memory Usage: 44.9 MB
-    Details:
-    - Your runtime beats 6.67 % of java submissions
-    - Your memory usage beats 15.20 % of java submissions
-*/
+/**
+ * Status: Accepted
+ * 362 / 362 test cases passed
+ * Runtime: 10 ms
+ * Memory Usage: 44.9 MB
+ * Details:
+ * - Your runtime beats 6.67 % of java submissions
+ * - Your memory usage beats 15.20 % of java submissions
+ */
 
 class Solution {
     public int removeDuplicates(int[] nums) {
