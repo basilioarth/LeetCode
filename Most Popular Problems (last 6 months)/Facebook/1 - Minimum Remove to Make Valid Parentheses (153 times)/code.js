@@ -1,16 +1,18 @@
 /**
- * Status: Wrong Answer
+ * Status: Accepted
+ * 62 / 62 test cases passed.
+ * Runtime: 123 ms
+ * Memory Usage: 52.3 MB
  * Details:
- * Input: "))(("
- * Output: [")"]
- * Expected: ""
+ * - Your runtime is faster than 46.94% of JavaScript online submissions for Minimum Remove to Make Valid Parentheses.
+ * - Your memory usage are less than 18.05% of JavaScript online submissions for Minimum Remove to Make Valid Parentheses.
 */ 
 
 /**
  * @param {string} s
  * @return {string}
  */
- var minRemoveToMakeValid = function(s) {
+var minRemoveToMakeValid = function(s) {
     stack = [];
     s = s.split('');
     
@@ -19,7 +21,7 @@
             stack.push({value: '(', index: i})
         }
         else if(s[i] === ')') {
-            if(stack.length == 0) { s.splice(i, 1); i = 0 } else stack.pop();
+            stack.length == 0 ? s[i] = '' : stack.pop();
         }
     }
     
@@ -28,14 +30,12 @@
         s.splice(letter.index, 1)
     }
     
-    /**
-    * Somente para deixar a saída mais apresentável
-    *   let result = '';
-    *
-    *   s.forEach((letter) => {
-    *       result = result + letter;
-    *   });
-    */
     
-    return s;
+    let result = '';
+
+    s.forEach((letter) => {
+       result = result + letter;
+    });
+    
+    return result;
 };
