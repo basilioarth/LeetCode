@@ -1,4 +1,4 @@
-## [Minimum Remove to Make Valid Parentheses](https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/)
+## [Minimum Remove to Make Valid Parentheses (153 times)](https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/)
 
 ```java
 Medium 
