@@ -1,43 +1,37 @@
-## [Minimum Remove to Make Valid Parentheses (153 times)](https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/)
+## [Bus Routes (29 times)](https://leetcode.com/problems/bus-routes/)
 
 ```java
-Medium 
+Hard 
 ```
 
-Given a string s of `'('` , `')'` and lowercase English characters.
+You are given an array `routes` representing bus routes where `routes[i]` is a bus route that the `ith` bus repeats forever.
 
-Your task is to remove the minimum number of parentheses ( `'('` or `')'`, in any positions ) so that the resulting parentheses string is valid and return **any** valid string.
+- For example, if `routes[0] = [1, 5, 7]`, this means that the `0th` bus travels in the sequence `1 -> 5 -> 7 -> 1 -> 5 -> 7 -> 1 -> ...` forever.
 
-Formally, a *parentheses string* is valid if and only if:
+You will start at the bus stop `source` (You are not on any bus initially), and you want to go to the bus stop `target`. You can travel between bus stops by buses only.
 
-- It is the empty string, contains only lowercase characters, or
-- It can be written as `AB` (`A` concatenated with `B`), where `A` and `B` are valid strings, or
-- It can be written as `(A)`, where `A` is a valid string.
+Return *the least number of buses you must take to travel from `source` to `target`*. Return `-1` if it is not possible.
 
  **Example 1:**
  
 ```java
-Input: s = "lee(t(c)o)de)"
-Output: "lee(t(c)o)de"
-Explanation: "lee(t(co)de)" , "lee(t(c)ode)" would also be accepted.
+Input: routes = [[1,2,7],[3,6,7]], source = 1, target = 6
+Output: 2
+Explanation: The best strategy is take the first bus to the bus stop 7, then take the second bus to the bus stop 6.
 ```
  
  **Example 2:**
  
 ```java
-Input: s = "a)b(c)d"
-Output: "ab(c)d"
-```
-
- **Example 3:**
- 
-```java
-Input: s = "))(("
-Output: ""
-Explanation: An empty string is also valid.
+Input: routes = [[7,12],[4,5,15],[6],[15,19],[9,12,13]], source = 15, target = 12
+Output: -1
 ```
 
 **Constraints:**
 
-- `1 <= s.length <= 105`
-- `s[i]` is either `'('` , `')'`, or lowercase English letter.
+- `1 <= routes.length <= 500`
+- `1 <= routes[i].length <= 105`
+- All the values of `routes[i]` are **unique**.
+- `sum(routes[i].length) <= 105`
+- `0 <= routes[i][j] < 106`
+- `0 <= source, target < 106`
