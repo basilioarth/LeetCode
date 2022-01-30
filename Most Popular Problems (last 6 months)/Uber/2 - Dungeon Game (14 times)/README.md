@@ -1,43 +1,39 @@
-## [Minimum Remove to Make Valid Parentheses (153 times)](https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/)
+## [Dungeon Game (14 times)](https://leetcode.com/problems/dungeon-game/)
 
 ```java
-Medium 
+Hard 
 ```
 
-Given a string s of `'('` , `')'` and lowercase English characters.
+The demons had captured the princess and imprisoned her in **the bottom-right corner** of a dungeon. The `dungeon` consists of `m x n` rooms laid out in a 2D grid. Our valiant knight was initially positioned in the **top-left room** and must fight his way through dungeon to rescue the princess.
 
-Your task is to remove the minimum number of parentheses ( `'('` or `')'`, in any positions ) so that the resulting parentheses string is valid and return **any** valid string.
+The knight has an initial health point represented by a positive integer. If at any point his health point drops to 0 or below, he dies immediately.
 
-Formally, a *parentheses string* is valid if and only if:
+Some of the rooms are guarded by demons (represented by negative integers), so the knight loses health upon entering these rooms; other rooms are either empty (represented as 0) or contain magic orbs that increase the knight's health (represented by positive integers).
 
-- It is the empty string, contains only lowercase characters, or
-- It can be written as `AB` (`A` concatenated with `B`), where `A` and `B` are valid strings, or
-- It can be written as `(A)`, where `A` is a valid string.
+To reach the princess as quickly as possible, the knight decides to move only **rightward** or **downward** in each step.
+
+Return *the knight's minimum initial health so that he can rescue the princess*.
+
+**Note** that any room can contain threats or power-ups, even the first room the knight enters and the bottom-right room where the princess is imprisoned.
 
  **Example 1:**
  
 ```java
-Input: s = "lee(t(c)o)de)"
-Output: "lee(t(c)o)de"
-Explanation: "lee(t(co)de)" , "lee(t(c)ode)" would also be accepted.
+Input: dungeon = [[-2,-3,3],[-5,-10,1],[10,30,-5]]
+Output: 7
+Explanation: The initial health of the knight must be at least 7 if he follows the optimal path: RIGHT-> RIGHT -> DOWN -> DOWN.
 ```
  
  **Example 2:**
  
 ```java
-Input: s = "a)b(c)d"
-Output: "ab(c)d"
-```
-
- **Example 3:**
- 
-```java
-Input: s = "))(("
-Output: ""
-Explanation: An empty string is also valid.
+Input: dungeon = [[0]]
+Output: 1
 ```
 
 **Constraints:**
 
-- `1 <= s.length <= 105`
-- `s[i]` is either `'('` , `')'`, or lowercase English letter.
+- `m == dungeon.length`
+- `n == dungeon[i].length`
+- `1 <= m, n <= 200`
+- `-1000 <= dungeon[i][j] <= 1000`
